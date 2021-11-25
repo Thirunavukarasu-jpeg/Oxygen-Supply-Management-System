@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/o_nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/oxy_update.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery-1.9.1.min.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="js/o_nicepage.js' %}" defer=""></script>
+    
+    {% endblock css %}
+  {% block style %}
+  .u-custom-color-1,
+        .u-body.u-custom-color-1,
+        .u-container-style.u-custom-color-1:before,
+        .u-container-layout.u-custom-color-1:before,
+        .u-table-alt-custom-color-1 tr:nth-child(even)
+        {
+            color: #111111;
+            background-color: #9cced9;
+        }
+
+        .u-button-style.u-custom-color-1,
+        .u-button-style.u-custom-color-1[class*="u-border-"]
+        {
+            color: #111111 !important;
+            background-color: #9cced9 !important;
+        }
+
+        .u-button-style.u-custom-color-1:hover,
+        .u-button-style.u-custom-color-1[class*="u-border-"]:hover,
+        .u-button-style.u-custom-color-1:focus,
+        .u-button-style.u-custom-color-1[class*="u-border-"]:focus,
+        .u-button-style.u-button-style.u-custom-color-1:active,
+        .u-button-style.u-button-style.u-custom-color-1[class*="u-border-"]:active,
+        .u-button-style.u-button-style.u-custom-color-1.active,
+        .u-button-style.u-button-style.u-custom-color-1[class*="u-border-"].active,
+        li.active > .u-button-style.u-button-style.u-custom-color-1,
+        li.active > .u-button-style.u-button-style.u-custom-color-1[class*="u-border-"]
+        {
+            color: #111111 !important;
+            background-color: #81c1cf !important;
+        }
+.count{
+    width: 10%;
+    float:right;
+    padding-top: 0px;
+    padding-left: -30px;
+    margin-right:250px;
+    font-size:70px;
+}
+  {% endblock style %}
+   {% block body %}
+     
+  <body class="u-body u-overlap u-overlap-transparent" ><header class="u-align-right u-clearfix u-header u-header" id="sec-5852"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-align-center u-clearfix u-custom-color-1 u-section-1" id="carousel_78b2"style='margin-top:-190px;' >
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h2 class="u-custom-font u-text u-text-default u-text-1" spellcheck="false" style='margin-top:30px;'>{{hospital.name}}</h2>
+        <div class="u-align-left u-border-5 u-border-palette-1-light-3 u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-custom-font"style="margin-left:40px; " spellcheck="false">Total number of Cylinders available<br>      <div class = 'count' style="font-family: 'Orbitron', sans-serif; ">{{hospital.oxygen_cylinders_remaining}}</div></h2>
+            <div class = 'count' style="font-family: 'Orbitron', sans-serif; color:black;"></div>
+          </div>
+        </div>
+        <div class="u-container-style u-group u-palette-1-base u-group-2">
+          <div class="u-container-layout u-container-layout-2" style='height:100px;'>
+            <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+              <div class="u-layout">
+                <div class="u-layout-col">
+                  <div class="u-size-60">
+                    <div class="u-layout-row">
+                      <div class="u-size-60">
+                        <div class="u-layout-col">
+                          <div class="u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
+                            <div class="u-container-layout u-container-layout-3">
+                              <h3 class="u-custom-font u-text u-text-4" spellcheck="false"> Oxygen cylinders details update</h3>
+                              <div class="u-form u-form-1">
+                                <form  method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0;" source="email" name="form">
+                                  {% csrf_token %}
+                                  <input type="hidden" id="siteId" name="siteId" value="1028780">
+                                  <input type="hidden" id="pageId" name="pageId" value="1028826">
+                                  {% if tot == 0 %}
+                                  <div class="u-form-group u-form-name">
+                                   
+                                    <label for="name-3d90" class="u-form-control-hidden u-label">Total Number of cylinders</label>
+                                    <input type="text" type="number" min="0" placeholder="Total Number of cylinders" id="name-3d90" name="tot_cylinders" class="u-input u-input-rectangle u-white" required="" spellcheck="false">
+                                  </div>
+                                  {% endif %}
+                                  <div class="u-form-group">
+                                    <label for="email-3d90" class="u-form-control-hidden u-label">Cylinders incoming</label>
+                                    <input type="text" placeholder="Cylinders incoming" id="email-3d90" min="0" name='cylinders_incoming' class="u-input u-input-rectangle u-white" required="required">
+                                  </div>
+                                  {% if use == 0 %}
+                                  <div class="u-form-group u-form-name u-form-group-3">
+                                    <label for="name-1936" class="u-form-control-hidden u-label"></label>
+                                    <input type="text" placeholder="Cylinders in use" id="name-1936" min="0" name='cylinders_in_use' class="u-input u-input-rectangle u-white" required="" spellcheck="false">
+                                  </div>
+                                  {% endif %}
+                                  <div class="u-form-group u-form-name u-form-group-4">
+                                    <label for="name-a246" class="u-form-control-hidden u-label"></label>
+                                    <input type="text" placeholder="Cylinders taken for use" id="name-a246" min="0" name='cylinders_taken' class="u-input u-input-rectangle u-white" required="">
+                                  </div>
+                                  <div class="u-align-left u-form-group u-form-submit">
+
+                                    <button class="u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-1" align="center">Submit</button>
+                                  </div>
+                                  
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  {% endblock body %}

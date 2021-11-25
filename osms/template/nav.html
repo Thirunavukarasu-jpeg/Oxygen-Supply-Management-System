@@ -1,0 +1,30 @@
+<header class="w3-panel w3-center w3-opacity" style="margin-top:-10px; ">
+<div class="container red topBotomBordersOut"style="margin-top:-60px;">
+<div class="w3-padding-32" >
+      <a href="{% url 'home' %}" class="w3-bar-item w3-button" style='color:black;'>Home</a>
+      <a href="{% url 'test' %}" class="w3-bar-item w3-button" style='color:black;'>Map</a>
+      {% if u %}
+   
+      {% endif %}
+      {% if user.is_authenticated %}
+      {% if supplier %}
+            <a href="{% url 'supplier_detail'  %}" class="w3-bar-item w3-button"style='color:black;'>Profile</a>
+        {% else %}
+         <div class="dropdown">
+        <a class="w3-bar-item w3-button"style='color:black;'>Update</a>
+        <div class="dropdown-content">
+            <a href="{% url 'oxygen_cylinder_update' %}" class="w3-bar-item w3-button"style='color:black;'>Oxygen_cylinders</a>
+            <a href="{% url 'oxygen_bed_update' %}" class="w3-bar-item w3-button"style='color:black;'>Oxygen_beds</a>
+        </div>
+    </div>
+            <a href="{% url 'info' hospital.unique_hospital_id %}" class="w3-bar-item w3-button"style='color:black;'>Profile</a>
+        {% endif %}
+
+      <a href="{% url 'logout' %}" class="w3-bar-item w3-button"style='color:black;'>Logout</a>
+  {% else %}
+      <a href="{% url 'login' %}" class="w3-bar-item w3-button"style='color:black;'>Login</a>
+{% endif %}
+
+  </div>
+  </div>
+</header>

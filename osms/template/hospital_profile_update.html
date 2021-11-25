@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Hospital details update</title>
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/supplier_profile_update.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery-1.9.1.min.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="js/o_nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.0.6, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <meta name="theme-color" content="#8ebec9">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <meta property="og:title" content="Home">
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#8ebec9">
+    <meta property="og:title" content="Page 4">
+    <meta property="og:type" content="website">
+    <style>
+    body {
+        color:white;
+    background-image: url("{% static "images/dimitri-karastelev-cIACWSlp474-unsplash.jpg" %}");
+    
+    background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+    min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+   h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a:hover{
+    color:white;
+}
+div.container
+{
+    font-family: Raleway;
+    margin-top:-170px;
+	padding: 80px;
+	text-align: center;
+    opacity:0.8;
+}
+
+div.container a
+{
+    color:black;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+.red
+{
+    
+}
+
+/* Top and Bottom borders go out */
+div.topBotomBordersOut a:before, div.topBotomBordersOut a:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: black;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+div.topBotomBordersOut a:before
+{
+    top: 0px;
+    transform: translateY(10px);
+}
+
+div.topBotomBordersOut a:after
+{
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+div.topBotomBordersOut a:hover:before, div.topBotomBordersOut a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+section{
+    margin-top:-30px;
+}
+    </style>
+  </head>
+  <body class="u-body u-overlap u-overlap-transparent">
+    <section class="skrollable u-align-center u-clearfix u-image u-parallax u-section-1" id="sec-0010" data-image-width="1280" data-image-height="852">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-custom-html u-custom-html-1">
+          <header class="w3-center w3-opacity w3-panel" style="margin-top:-10px; margin-right:-570px; ">
+            <div class="container red topBotomBordersOut" style="margin-top:-60px;">
+              <div class="w3-padding-32">
+                <a href="{% url 'home' %}" class="w3-bar-item w3-button" style="color:black;">Home</a>
+                <a href="{% url 'test' %}" class="w3-bar-item w3-button" style="color:black;">Map</a> {% if u %}
+   
+      {% endif %}
+      {% if user.is_authenticated %}
+      {% if supplier %} <a href="{% url 'supplier_detail'  %}" class="w3-bar-item w3-button" style="color:white;">Profile</a> {% else %} <div class="dropdown">
+                  <a class="w3-bar-item w3-button" style="color:black;">Update</a>
+                  <div class="dropdown-content">
+                    <a href="{% url 'oxygen_cylinder_update' %}" class="w3-bar-item w3-button" style="color:black;">Oxygen_cylinders</a>
+                    <a href="{% url 'oxygen_bed_update' %}" class="w3-bar-item w3-button" style="color:black;">Oxygen_beds</a>
+                  </div>
+                </div>
+                <a href="{% url 'info' hospital.unique_hospital_id %}" class="w3-bar-item w3-button" style="color:black;">Profile</a> {% endif %} <a href="{% url 'logout' %}" class="w3-bar-item w3-button" style="color:black;">Logout</a> {% else %} <a href="{% url 'login' %}" class="w3-bar-item w3-button" style="color:black;">Login</a> {% endif %} 
+              </div>
+            </div>
+          </header>
+        </div>
+  
+        <div class="u-align-left u-shape u-shape-1"style="margin-top:-50px;"></div>
+        <h3 class="u-text u-text-default u-text-2">Hospital details update</h3>
+        <div class="u-form u-form-1">
+          <form  method="POST" class="u-clearfix u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" >
+            {% csrf_token %}
+            <input type="hidden" id="siteId" name="siteId" value="1028780">
+            <input type="hidden" id="pageId" name="pageId" value="1029167">
+            <div class="u-form-group u-form-name">
+              <label for="name-3b9a" class="u-form-control-hidden u-label">Name</label>
+              <input type="text" placeholder="{{hospital.name}}" id="name-3b9a" name="name" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1"  spellcheck="false">
+            </div>
+            <div class="u-form-group u-form-name">
+              <label for="name-3b9a" class="u-form-control-hidden u-label">Name</label>
+              <input type="text" placeholder="Doctors - {{hospital.total_doctors}}" id="name-3b9a" name="doctors" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1"  spellcheck="false">
+            </div>
+            <div class="u-form-group u-form-name">
+              <label for="name-3b9a" class="u-form-control-hidden u-label">Name</label>
+              <input type="text" placeholder="nurses - {{hospital.total_nurses}}" id="name-3b9a" name="nurses" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1"  spellcheck="false">
+            </div>
+            <div class="u-form-group">
+              <label for="email-3b9a" class="u-form-control-hidden u-label">Email</label>
+              <input type="text" placeholder="{{hospital.location}}" id="email-3b9a" name="location" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-2"  spellcheck="false">
+            </div>
+            <div class="u-form-group u-form-group-3">
+              <label for="text-6335" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="{{hospital.contact_details}}" id="text-6335" name="phone" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-3">
+            </div>
+            <div class="u-form-email u-form-group u-form-group-4">
+              <label for="text-dcfd" class="u-form-control-hidden u-label"></label>
+              <input type="email" placeholder="{{hospital.mail_id}}" id="text-dcfd" name="mail" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-4" spellcheck="false">
+            </div>
+            <div class="u-align-center u-form-group u-form-submit">
+              
+              <button class="submit u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-1" align="center">Submit</button>
+            
+            
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+  </body>
+</html>

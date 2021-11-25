@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/oxy_update.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery-1.9.1.min.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="js/o_nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.0.6, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina:400">
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <meta name="theme-color" content="#8ebec9">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <meta property="og:title" content="Home">
+    {% endblock css %}
+    {% block style %}
+    
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a:hover{
+    color:black;
+}
+div.container
+{
+    font-family: Raleway;
+    margin-top:-170px;
+	padding: 80px;
+	text-align: center;
+    opacity:0.8;
+}
+
+div.container a
+{
+    color:black;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+.red
+{
+    
+}
+
+/* Top and Bottom borders go out */
+div.topBotomBordersOut a:before, div.topBotomBordersOut a:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: black;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+div.topBotomBordersOut a:before
+{
+    top: 0px;
+    transform: translateY(10px);
+}
+
+div.topBotomBordersOut a:after
+{
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+div.topBotomBordersOut a:hover:before, div.topBotomBordersOut a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+section{
+    margin-top:-30px;
+}
+.count{
+    width: 10%;
+    float:right;
+    margin-top: 40px;
+    padding-left: -30px;
+    margin-right:250px;
+    font-size:70px;
+}
+.u-custom-color-1,
+        .u-body.u-custom-color-1,
+        .u-container-style.u-custom-color-1:before,
+        .u-container-layout.u-custom-color-1:before,
+        .u-table-alt-custom-color-1 tr:nth-child(even)
+        {
+            color: #111111;
+            background-color: #9cced9;
+        }
+
+        .u-button-style.u-custom-color-1,
+        .u-button-style.u-custom-color-1[class*="u-border-"]
+        {
+            color: #111111 !important;
+            background-color: #9cced9 !important;
+        }
+
+        .u-button-style.u-custom-color-1:hover,
+        .u-button-style.u-custom-color-1[class*="u-border-"]:hover,
+        .u-button-style.u-custom-color-1:focus,
+        .u-button-style.u-custom-color-1[class*="u-border-"]:focus,
+        .u-button-style.u-button-style.u-custom-color-1:active,
+        .u-button-style.u-button-style.u-custom-color-1[class*="u-border-"]:active,
+        .u-button-style.u-button-style.u-custom-color-1.active,
+        .u-button-style.u-button-style.u-custom-color-1[class*="u-border-"].active,
+        li.active > .u-button-style.u-button-style.u-custom-color-1,
+        li.active > .u-button-style.u-button-style.u-custom-color-1[class*="u-border-"]
+        {
+            color: #111111 !important;
+            background-color: #81c1cf !important;
+        }
+        {% endblock style %}
+   
+  
+{% block body %}
+  <body class="u-body u-overlap u-overlap-transparent"><header class="u-align-right u-clearfix u-header u-header" id="sec-5852"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-align-center u-clearfix u-custom-color-1 u-section-1" id="carousel_78b2"style='margin-top:-190px;'>
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h2 class="u-custom-font u-text u-text-default u-text-1" spellcheck="false" style='margin-top:30px;'>{{hospital.name}}</h2>
+        <div class="u-align-left u-border-5 u-border-palette-1-light-3 u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+                      <h2 class="u-custom-font"style="margin-left:40px; " spellcheck="false">Total number of beds available<br>      <div class = 'count' style="font-family: 'Orbitron', sans-serif; ">{{hospital.oxygen_supported_beds_remaining}}</div></h2>
+            
+          </div>
+        </div>
+        <div class="u-container-style u-group u-palette-1-base u-group-2">
+          <div class="u-container-layout u-container-layout-2">
+            <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+              <div class="u-layout">
+                <div class="u-layout-col">
+                  <div class="u-size-60">
+                    <div class="u-layout-row">
+                      <div class="u-size-60">
+                        <div class="u-layout-col">
+                          <div class="u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
+                            <div class="u-container-layout u-container-layout-3">
+                              <h3 class="u-custom-font u-text u-text-4" spellcheck="false"> Oxygen supported bed details update</h3>
+                              <div class="u-form u-form-1">
+                                <form  method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0;" source="email" name="form">
+                                  {% csrf_token %}
+                                  <input type="hidden" id="siteId" name="siteId" value="1028780">
+                                  <input type="hidden" id="pageId" name="pageId" value="1028826">
+                                  {% if tot == 0 %}
+                                  <div class="u-form-group u-form-name">
+                                   
+                                    <label for="name-3d90" class="u-form-control-hidden u-label">Total Number of beds</label>
+                                    <input type="text" type="number" min="0" placeholder="Total Number of beds" id="name-3d90" name="tot_beds" class="u-input u-input-rectangle u-white" required="" spellcheck="false">
+                                  </div>
+                                  {% endif %}
+                                  <div class="u-form-group">
+                                    <label for="email-3d90" class="u-form-control-hidden u-label">Beds incoming</label>
+                                    <input type="text" placeholder="Beds incoming" id="email-3d90" min="0" name='beds_incoming' class="u-input u-input-rectangle u-white" required="required">
+                                  </div>
+                                  {% if use == 0 %}
+                                  <div class="u-form-group u-form-name u-form-group-3">
+                                    <label for="name-1936" class="u-form-control-hidden u-label"></label>
+                                    <input type="text" placeholder="Beds in use" id="name-1936" min="0" name='beds_in_use' class="u-input u-input-rectangle u-white" required="" spellcheck="false">
+                                  </div>
+                                  {% endif %}
+                                  <div class="u-form-group u-form-name u-form-group-4">
+                                    <label for="name-a246" class="u-form-control-hidden u-label"></label>
+                                    <input type="text" placeholder="Beds taken for use" id="name-a246" min="0" name='beds_taken' class="u-input u-input-rectangle u-white" required="">
+                                  </div>
+                                  <div class="u-form-group u-form-name u-form-group-4">
+                                    <label for="name-a246" class="u-form-control-hidden u-label"></label>
+                                    <input type="text" placeholder="Beds free for use" id="name-a246" min="0" name='beds_free' class="u-input u-input-rectangle u-white" required="">
+                                  </div>
+                                  <div class="u-align-left u-form-group u-form-submit">
+
+                                    <button class="u-border-2 u-border-grey-dark-1 u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-1" align="center">Submit</button>
+                                  </div>
+                                  
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock body%}
