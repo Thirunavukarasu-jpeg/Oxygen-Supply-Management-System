@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>OSMS HOMEPAGE</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <style>
+    
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+body{
+    background-image:url({% static "images/map.jpg" %});
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+a:hover{
+    color:black;
+}
+div.container
+{
+    font-family: Raleway;
+    margin-top:-170px;
+	padding: 80px;
+	text-align: center;
+    opacity:0.8;
+}
+
+div.container a
+{
+    color:white;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+.red
+{
+    
+}
+
+/* Top and Bottom borders go out */
+div.topBotomBordersOut a:before, div.topBotomBordersOut a:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+div.topBotomBordersOut a:before
+{
+    top: 0px;
+    transform: translateY(10px);
+}
+
+div.topBotomBordersOut a:after
+{
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+div.topBotomBordersOut a:hover:before, div.topBotomBordersOut a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+    </style>
+</head>
+<body>
+<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+<div class="container red topBotomBordersOut">
+<div class="w3-padding-32">
+      <a href="{% url 'home' %}" class="w3-bar-item w3-button">Home</a>
+      <a href="{% url 'test' %}" class="w3-bar-item w3-button">Map</a>
+      {% if u %}
+   
+      {% endif %}
+      {% if user.is_authenticated %}
+      {% if supplier %}
+            <a href="{% url 'supplier_detail'  %}" class="w3-bar-item w3-button">Profile</a>
+        {% else %}
+         <div class="dropdown">
+        <a class="w3-bar-item w3-button">Update</a>
+        <div class="dropdown-content">
+            <a href="{% url 'oxygen_cylinder_update' %}" class="w3-bar-item w3-button">Oxygen_cylinders</a>
+            <a href="{% url 'oxygen_bed_update' %}" class="w3-bar-item w3-button">Oxygen_beds</a>
+        </div>
+    </div>
+            <a href="{% url 'info' hospital.unique_hospital_id %}" class="w3-bar-item w3-button">Profile</a>
+        {% endif %}
+
+      <a href="{% url 'logout' %}" class="w3-bar-item w3-button">Logout</a>
+  {% else %}
+      <a href="{% url 'login' %}" class="w3-bar-item w3-button">Login</a>
+{% endif %}
+
+  </div>
+  </div>
+</header>
+
+<p>
+
+</p>
+</body>
+</html>
+
+

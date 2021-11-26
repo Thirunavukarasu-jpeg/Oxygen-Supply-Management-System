@@ -1,0 +1,245 @@
+{% comment %} <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IR REMOTE CONNECTION</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+
+
+<p>
+{{id}}
+
+</p>
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<title>{{hospital.name}} profile </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+<style>
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a:hover{
+    color:black;
+}
+div.container
+{
+    font-family: Raleway;
+    margin-top:-170px;
+	padding: 80px;
+	text-align: center;
+    opacity:0.8;
+}
+
+div.container a
+{
+    color:black;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+.red
+{
+    
+}
+
+/* Top and Bottom borders go out */
+div.topBotomBordersOut a:before, div.topBotomBordersOut a:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: black;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+div.topBotomBordersOut a:before
+{
+    top: 0px;
+    transform: translateY(10px);
+}
+
+div.topBotomBordersOut a:after
+{
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+div.topBotomBordersOut a:hover:before, div.topBotomBordersOut a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.left{
+    width: 70%;
+    float:left;
+    padding: 30px;
+    margin-left:300px;
+    margin-top:-80px;
+}
+.right{
+    width: 20%;
+    float:left;
+    padding: 30px;
+}
+.count{
+    width: 10%;
+    float:right;
+    margin-top: -40px;
+    padding-left: -30px;
+    font-size:70px;
+}
+</style>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+<div class="container red topBotomBordersOut">
+<div class="w3-padding-32">
+      <a href="{% url 'home' %}" class="w3-bar-item w3-button">Home</a>
+      <a href="{% url 'test' %}" class="w3-bar-item w3-button">Map</a>
+    <div class="dropdown">
+        <a class="w3-bar-item w3-button">Update</a>
+        <div class="dropdown-content">
+            <a href="{% url 'oxygen_cylinder_update' %}" class="w3-bar-item w3-button">Oxygen_cylinders</a>
+            <a href="{% url 'oxygen_bed_update' %}" class="w3-bar-item w3-button">Oxygen_beds</a>
+        </div>
+    </div>
+      
+      {% if user.is_authenticated %}
+      <a href="{% url 'info' hospital.unique_hospital_id %}" class="w3-bar-item w3-button">Profile</a>
+      <a href="{% url 'logout' %}" class="w3-bar-item w3-button">Logout</a>
+  {% else %}
+      <a href="{% url 'login' %}" class="w3-bar-item w3-button">Login</a>
+{% endif %}
+  </div>
+  </div>
+<h1 class="w3-xlarge">{{hospital.name}}</h1>
+
+</header>
+
+<!-- Photo Grid -->
+
+<!-- End Page Content -->
+</div>
+
+
+
+
+<div class='left'>
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large"style="margin-top:-100px;"> 
+  <div class="wrapper">
+    <div class="container" style="">
+        <article class="part card-details">
+<br>
+<br>
+            <h1>
+                Hospital details update
+            </h1>
+            <form class="form1" method='POST'>
+                {% csrf_token %}
+      <br>  
+                <div class="group card-number">
+                    <label for="first">Name</label>
+                     <input type="text"  name='name' value={{hospital.name}}>
+                </div>
+                <br>
+                
+                <div class="group card-name">
+                    <label for="first">Total Doctors</label>
+                     <input type="number" min="0" name='doctors' value={{hospital.total_doctors}}>
+                </div>
+                <br>
+                
+                <div class="group card-name">
+                    <label for="first">Total nurses</label>
+                     <input type="number" min="0" name='nurses'value={{hospital.total_nurses}}>
+                </div>
+                <br>
+                <div class="group card-name">
+                    <label for="first">Location</label>
+                     <input type="text" name='location'value={{hospital.location}}>
+                </div>
+                <br>
+                <div class="group card-name">
+                    <label for="first">Contact number</label>
+                     <input type="text" name='phone'value={{hospital.contact_details}}>
+                </div>
+                <br>
+                <div class="group card-name">
+                    <label for="first">Email id</label>
+                     <input type="text" name='mail'value={{hospital.mail_id}}>
+                </div>
+                <br>
+                
+      <button class="submit" align="center">Submit</button>
+      </form>
+            
+        </article>
+        <div class="part bg"></div>
+    </div>
+</div>
+
+</footer>
+</div>
+
+
+<p>
+<br>
+<br>
+
+<br>
+
+<br>
+
+
+</p>
+</body>
+</html>
+
